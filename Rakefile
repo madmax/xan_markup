@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/madmax/xan_markup"
   gem.license = "MIT"
   gem.summary = %Q{simple tag parser}
-  gem.description = %Q{TODO: simple tag parser}
+  gem.description = %Q{Simple tag parser}
   gem.email = "grzegorz.derebecki@fdb.pl"
   gem.authors = ["Grzegorz Derebecki"]
   # dependencies defined in Gemfile

@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xan_markup}
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Grzegorz Derebecki"]
-  s.date = %q{2011-07-04}
-  s.description = %q{TODO: simple tag parser}
+  s.date = %q{2011-07-05}
+  s.description = %q{Simple tag parser}
   s.email = %q{grzegorz.derebecki@fdb.pl}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -25,10 +25,10 @@ Gem::Specification.new do |s|
     "README",
     "Rakefile",
     "VERSION",
-    "lib/xan/markup.rb",
     "lib/xan_markup.rb",
+    "lib/xan_markup/helper.rb",
     "spec/spec_helper.rb",
-    "spec/xan_markup_spec.rb",
+    "spec/xan_markup/helper_spec.rb",
     "xan_markup.gemspec"
   ]
   s.homepage = %q{http://github.com/madmax/xan_markup}
