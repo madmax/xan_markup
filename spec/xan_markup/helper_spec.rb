@@ -46,6 +46,10 @@ describe XanMarkup::Helper do
     expect { helper.markupize("this is markup {{ test }} tag") }.should_not raise_error(NoMethodError)
   end
   
+  it "should return text that tag is not defined" do
+    helper.markupize("this is markup {{ test }} tag").should include("missing tag: test")
+  end
+  
   it "should replace tag with content returned by markup helper" do
     helper.stub(:markup_best_language).and_return("Ruby")
     helper.markupize("Best language is: {{ best_language }}").should include("Ruby")
