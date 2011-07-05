@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.email = %q{grzegorz.derebecki@fdb.pl}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README"
+    "README.md"
   ]
   s.files = [
     ".document",
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README",
+    "README.md",
     "Rakefile",
     "VERSION",
     "lib/xan_markup.rb",
