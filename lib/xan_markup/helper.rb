@@ -7,12 +7,17 @@ module XanMarkup
   module Helper
     def markupize(content)
       content.to_s.dup.gsub(MarkupSyntax) do |markup|
-        args = {}
-        method = "markup_#{$1.split.first}"
+        args   = {}
+        tag    = $1.split.first
+        method = "markup_#{tag}"
         $1.scan(TagAttributes) do |key, value|
           args[key.to_sym] = value.gsub(CleanAttributeValue, "")
         end
-        (args.empty? ? send(method) : send(method, args)).to_s  if respond_to?(method)
+        if respond_to?(method)
+          (args.empty? ? send(method) : send(method, args)).to_s  
+        else
+          "missing tag: #{tag}"
+        end
       end
     end
   end
