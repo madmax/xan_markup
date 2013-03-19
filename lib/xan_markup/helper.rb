@@ -3,10 +3,10 @@ module XanMarkup
   QuotedString                = /"[^"]+"|'[^']+'/
   QuotedFragment              = /#{QuotedString}|(?:[^\s,\|'"]|#{QuotedString})+/
   TagAttributes               = /(\w+)\s*\=\s*(#{QuotedFragment})/
-  CleanAttributeValue         = /^("|')|("|')$/  
+  CleanAttributeValue         = /^("|')|("|')$/
   module Helper
     def markupize(content)
-      content.to_s.dup.gsub(MarkupSyntax) do |markup|
+      content.to_s.dup.to_str.gsub(MarkupSyntax) do |markup|
         args   = {}
         tag    = $1.split.first
         method = "markup_#{tag}"
@@ -14,7 +14,7 @@ module XanMarkup
           args[key.to_sym] = value.gsub(CleanAttributeValue, "")
         end
         if respond_to?(method)
-          (args.empty? ? send(method) : send(method, args)).to_s  
+          (args.empty? ? send(method) : send(method, args)).to_s
         else
           "missing tag: #{tag}"
         end
