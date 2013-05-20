@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "xan_markup"
-  s.version = "0.1.2"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Grzegorz Derebecki"]
-  s.date = "2013-03-19"
+  s.date = "2013-05-20"
   s.description = "Simple tag parser"
   s.email = "grzegorz.derebecki@fdb.pl"
   s.extra_rdoc_files = [
@@ -26,7 +26,10 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/xan_markup.rb",
+    "lib/xan_markup/caller.rb",
     "lib/xan_markup/helper.rb",
+    "lib/xan_markup/markupizer.rb",
+    "lib/xan_markup/tag.rb",
     "spec/spec_helper.rb",
     "spec/xan_markup/helper_spec.rb",
     "xan_markup.gemspec"
