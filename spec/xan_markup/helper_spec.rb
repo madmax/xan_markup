@@ -77,14 +77,15 @@ module XanMarkup
       markupizer.tags.first.args.should == {name: "xan"}
     end
 
-
-
-
     it "should works with classes that inherance from string" do
       markupizer = Markupizer.new SafeBuffer.new("{{test}}")
       markupizer.should have(1).tags
     end
 
+    it "should allow change syntax" do
+      markupizer = Markupizer.new "[test]", /\[ ?(.*?) ?\]/
+      markupizer.should have(1).tags
+    end
 
   end
 end
