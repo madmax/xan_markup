@@ -6,12 +6,12 @@
 
 Gem::Specification.new do |s|
   s.name = "xan_markup"
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Grzegorz Derebecki"]
-  s.date = "2015-02-10"
+  s.date = "2018-01-02"
   s.description = "Simple tag parser"
   s.email = "grzegorz.derebecki@fdb.pl"
   s.extra_rdoc_files = [

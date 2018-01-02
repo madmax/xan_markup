@@ -9,7 +9,7 @@ GEM
       rake
       rdoc
     rake (10.4.2)
-    rdoc (4.0.0)
+    rdoc (6.0.1)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -27,3 +27,6 @@ DEPENDENCIES
   jeweler
   rdoc
   rspec
+
+BUNDLED WITH
+   1.16.0

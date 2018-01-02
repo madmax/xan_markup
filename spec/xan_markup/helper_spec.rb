@@ -47,6 +47,28 @@ module XanMarkup
       markupizer.markupize {|tag| "SUPER" }.should include("SUPER")
     end
 
+    it "should allow block tag" do
+      markupizer = Markupizer.new("this is markup {{test}}tag{{/test}}")
+      markupizer.markupize {|tag| tag.content.upcase }.should include("TAG")
+    end
+
+    it "should allow nestd block tags" do
+      markupizer = Markupizer.new("{{test}}tag {{test2}}test2{{/test2}}{{/test}}")
+      markupizer.markupize {|tag| tag.content.upcase }.should == "TAG TEST2"
+    end
+
+    it "should allow multiple identical tags in the same content" do
+      markupizer = Markupizer.new("{{test}}A{{/test}} {{test}}B{{/test}}")
+      markupizer.markupize {|tag| tag.content }.should == "A B"
+    end
+
+    it "should return two block tags" do
+      markupizer = Markupizer.new('this is {{a}}A{{/a}} markup {{b}}B{{/b}}')
+      markupizer.should have(2).tags
+    end
+
+
+
     it "should return two tags (whitespaces allowed)" do
       markupizer = Markupizer.new('this is {{awesome}} markup {{test}}')
       markupizer.should have(2).tags
