@@ -67,7 +67,10 @@ module XanMarkup
       expect(markupizer.tags.size).to eq(2)
     end
 
-
+    it "should allow multiline blocks" do
+      markupizer = Markupizer.new("{{test}}\nA{{/test}}")
+      expect(markupizer.markupize {|tag| tag.content }).to eq("\nA")
+    end
 
     it "should return two tags (whitespaces allowed)" do
       markupizer = Markupizer.new('this is {{awesome}} markup {{test}}')

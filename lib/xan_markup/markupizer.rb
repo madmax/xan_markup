@@ -4,7 +4,7 @@ require 'xan_markup/content_tag'
 module XanMarkup
   class Markupizer
     MarkupSyntax                = /\{\{ ?(.*?) ?\}\}/
-    BlockMarkupSyntax           = /\{\{ ?((\w+)(.*?)) ?\}\}(.*?)\{\{ ?\/(\2) ?\}\}/
+    BlockMarkupSyntax           = /\{\{ ?((\w+)(.*?)) ?\}\}(.*?)\{\{ ?\/(\2) ?\}\}/m
 
     def initialize(content, syntax = MarkupSyntax, block_syntax = BlockMarkupSyntax)
       @content = content.to_s.dup.to_str
