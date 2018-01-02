@@ -7,6 +7,4 @@ require "xan_markup"
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
-RSpec.configure do |config|
-  
-end
+RSpec::Expectations.configuration.on_potential_false_positives = :nothing
