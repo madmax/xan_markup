@@ -7,7 +7,7 @@ module XanMarkup
     def call
       ->(tag) do
         if @context.respond_to?(tag.method)
-          @context.send(tag.method, tag.args)
+          @context.send(tag.method, **tag.args)
         else
           "missing tag: #{tag.name}"
         end
